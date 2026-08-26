@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#6f4b54">
+<title>花月小鎮・高級試玩版</title>
+<style>
+:root{--wine:#6f4b54;--rose:#b96d76;--gold:#e0b86a;--paper:#fff7e8;--ink:#493937;--jade:#70907b}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden;background:#201b1a;font-family:"PingFang TC","Noto Serif TC",serif;color:var(--ink)}
+button{font:inherit}.app{height:100%;max-width:520px;margin:auto;position:relative;overflow:hidden;background:linear-gradient(#f6dcd4,#efe0c5 38%,#9bad8c)}
+.bg{position:absolute;inset:0;pointer-events:none}.moon{position:absolute;right:-25px;top:70px;width:150px;height:150px;border-radius:50%;background:#f6dfa6;box-shadow:0 0 55px #ffe9b688}
+.m1,.m2{position:absolute;left:-10%;width:120%;height:45%;clip-path:polygon(0 85%,18% 40%,32% 69%,50% 27%,66% 66%,84% 39%,100% 75%,100% 100%,0 100%)}.m1{bottom:16%;background:#91a08d;opacity:.72}.m2{bottom:7%;background:#6e8875;opacity:.86}
+.petals{position:absolute;inset:0;background-image:radial-gradient(circle,#e8a3ab 0 3px,transparent 4px);background-size:120px 150px;opacity:.22;animation:fall 16s linear infinite}@keyframes fall{to{background-position:140px 300px}}
+.top{position:relative;z-index:10;padding:calc(env(safe-area-inset-top) + 8px) 12px 8px;background:linear-gradient(#60434b,#7b525a);color:#fff3df;border-bottom:1px solid #e0bd78;box-shadow:0 5px 16px #3f2c2d55;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:9px;align-items:center}.seal{width:39px;height:39px;border-radius:10px;display:grid;place-items:center;background:#aa5255;border:2px solid #ecc77f;font-weight:900}.brand b{font-size:20px;letter-spacing:3px}.brand small{display:block;font-size:9px;opacity:.74;letter-spacing:1.4px}
+.res{display:flex;gap:5px}.pill{font-size:11px;padding:6px 8px;border:1px solid #f0d59d55;background:#fff3dd1c;border-radius:18px}
+.screen{position:absolute;inset:62px 0 0;z-index:3;overflow:auto;padding-bottom:20px}.hidden{display:none!important}
+.hero{height:250px;margin:12px;border-radius:22px;position:relative;overflow:hidden;border:1px solid #bd8e67;box-shadow:0 12px 30px #46332c4d;background:linear-gradient(#dfd4b5 0 35%,#a5b28d 36% 76%,#b39a6f 77%)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:45px;background:linear-gradient(#bca574,#957957)}
+.house{position:absolute;left:50%;bottom:42px;transform:translateX(-50%);width:255px;height:118px;background:#e4c08c;border:5px solid #67493b;border-radius:8px;box-shadow:0 8px #4c352d}
+.roof{position:absolute;left:50%;bottom:151px;transform:translateX(-50%);width:305px;height:72px;background:#71525a;clip-path:polygon(0 72%,11% 38%,50% 8%,89% 38%,100% 72%,88% 58%,50% 40%,12% 58%);filter:drop-shadow(0 6px 0 #4e3b41)}
+.door{position:absolute;left:101px;bottom:0;width:53px;height:79px;background:#735144;border:3px solid #543b33}.window{position:absolute;bottom:42px;width:47px;height:43px;border:3px solid #694b3e;background:repeating-linear-gradient(90deg,#ffecbd 0 8px,#7c5946 8px 11px)}.w1{left:25px}.w2{right:25px}
+.lantern{position:absolute;top:20px;font-size:29px}.l1{left:62px}.l2{right:62px}.tree{position:absolute;bottom:34px;font-size:96px;filter:drop-shadow(0 6px 3px #3b493655)}.t1{left:-20px}.t2{right:-25px}
+.story{position:absolute;left:18px;right:18px;bottom:8px;z-index:3;padding:9px 11px;border-radius:15px;background:#fff8eae8;border:1px solid #bc8966;font-size:11px;line-height:1.55;box-shadow:0 4px 12px #5b3d3133}.story b{color:#844d54}
+.panel{margin:0 12px 10px;padding:12px;border-radius:18px;background:linear-gradient(#fff8e9,#f0dfbf);border:1px solid #bc8a61;box-shadow:0 7px 18px #563c2b33}.head{display:flex;justify-content:space-between;font-size:12px}.head b{color:#854b50}
+.progress{height:9px;border-radius:10px;background:#c7a777;overflow:hidden;margin:9px 0 6px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b96a73,#e2b667);transition:.3s}
+.tasks{display:flex;gap:7px}.task{flex:1;text-align:center;padding:7px 3px;border-radius:12px;background:#fff9edc7;border:1px solid #cca578;font-size:10px}
+.big{width:100%;margin-top:10px;border:0;border-radius:15px;padding:12px;background:linear-gradient(#c2767a,#9d565e);color:#fff8e8;font-weight:900;font-size:16px;box-shadow:0 4px 0 #74434a}
+.navs{display:flex;gap:6px;margin:0 12px}.nav{flex:1;border:1px solid #b58560;background:#fff2dbdd;border-radius:13px;padding:8px 3px;font-size:10px;color:#6a4c42}
+.level{padding-top:7px}.levelhead{display:grid;grid-template-columns:38px 1fr auto;gap:6px;align-items:center;padding:0 11px 7px}.back{width:34px;height:34px;border-radius:50%;border:1px solid #b87f61;background:#fff2dc;color:#754a43}.lname{text-align:center;font-weight:900;font-size:14px}.moves{font-size:11px;background:#fff0d7;border:1px solid #c58d63;padding:6px 8px;border-radius:16px}
+.goals{display:flex;gap:6px;padding:0 11px 7px}.goal{flex:1;background:#fff5e5ea;border:1px solid #c49068;border-radius:11px;padding:6px;text-align:center;font-size:10px}
+.boardframe{margin:0 8px;padding:7px;border-radius:20px;background:linear-gradient(145deg,#795546,#4b342d);border:3px solid #d2a56c;box-shadow:inset 0 0 0 2px #3c2823,0 10px 22px #35251f55}
+.board{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}.tile{aspect-ratio:1;border-radius:11px;position:relative;display:grid;place-items:center;background:linear-gradient(145deg,#fff1cd,#dcb67d);border:1px solid #bd8954;box-shadow:inset 0 2px #fff9,inset 0 -2px #9c6f4744,0 2px 2px #2a1c1755;overflow:hidden;transition:.13s;user-select:none}
+.tile:before{content:"";position:absolute;inset:3px;border:1px solid #fff7;border-radius:8px}.gem{width:72%;height:72%;position:relative;z-index:1;filter:drop-shadow(0 3px 1px #513c3266)}
+.g0{background:radial-gradient(circle at 50% 50%,#ffd8df 0 22%,#d98191 23% 38%,transparent 39%),radial-gradient(circle at 50% 13%,#ef9baa 0 22%,transparent 23%),radial-gradient(circle at 87% 50%,#ef9baa 0 22%,transparent 23%),radial-gradient(circle at 50% 87%,#ef9baa 0 22%,transparent 23%),radial-gradient(circle at 13% 50%,#ef9baa 0 22%,transparent 23%)}
+.g1{background:radial-gradient(ellipse at center,#f2cb71 0 48%,#d99b43 49% 60%,transparent 61%);border-radius:50%;transform:rotate(-12deg)}.g2{background:linear-gradient(135deg,#a6ce9f,#568869);clip-path:polygon(50% 0,100% 48%,53% 100%,0 53%);border-radius:30%}
+.g3{background:linear-gradient(90deg,#c85f65 0 18%,#f0c574 19% 37%,#799a7d 38% 56%,#dc8490 57% 76%,#a86d9a 77%);border-radius:40%;transform:rotate(32deg)}
+.g4{background:radial-gradient(ellipse at 50% 44%,#e5efe5 0 42%,#9bb899 43% 56%,transparent 57%);border-bottom:7px solid #8b5d48;border-radius:50%}
+.g5{background:radial-gradient(circle,#f1bf7b 0 36%,#c77464 37% 50%,#8b4d46 51% 57%,transparent 58%);border-radius:50%}
+.tile.sel{outline:3px solid #ffd66e;transform:scale(1.08);z-index:4}.tile.pop{animation:pop .3s forwards}@keyframes pop{45%{transform:scale(1.28);filter:brightness(1.7)}100%{transform:scale(.15);opacity:0}}.tile.drop{animation:drop .25s}@keyframes drop{from{transform:translateY(-25px);opacity:.3}}
+.spec{position:absolute;z-index:3;right:2px;top:0;font-size:12px}.rocket{background:linear-gradient(145deg,#ffe6a1,#e5aa63)}.bomb{background:linear-gradient(145deg,#f0b1ac,#c66d70)}.lotus{background:linear-gradient(145deg,#def0d6,#81ae8b)}
+.scorearea{padding:7px 12px 0}.meter{height:9px;border-radius:10px;background:#684d4266;border:1px solid #725246;overflow:hidden}.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b96770,#e4b667)}.scoreline{display:flex;justify-content:space-between;font-size:10px;margin-top:4px}
+.tools{display:flex;gap:6px;padding:7px 11px}.tool{flex:1;border:1px solid #b98760;border-radius:12px;padding:8px 3px;background:#fff2dd;color:#684b42;font-size:10px;box-shadow:0 3px 0 #9c704f}.tool.hot{background:linear-gradient(#be6f74,#995259);color:#fff}
+.combo{position:fixed;left:50%;top:47%;transform:translate(-50%,-50%);z-index:30;color:#fff0a7;font-weight:900;font-size:35px;text-shadow:0 4px #80484d,0 0 16px #ffd86f;opacity:0;pointer-events:none}.combo.show{animation:c .8s}@keyframes c{0%{opacity:0;transform:translate(-50%,-50%) scale(.5)}30%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}100%{opacity:0;transform:translate(-50%,-63%) scale(.9)}}
+.modal{position:fixed;inset:0;background:#241b19cc;display:none;align-items:center;justify-content:center;padding:24px;z-index:50}.card{width:min(390px,100%);padding:22px;border-radius:24px;background:linear-gradient(#fff8e9,#eed7b6);border:3px solid #b8845f;box-shadow:0 20px 60px #0008;text-align:center}.card h2{color:#844b52;margin:3px}.reward{font-size:54px;margin:6px}.card p{font-size:12px;line-height:1.7}.card button{border:0;border-radius:14px;padding:11px 25px;background:linear-gradient(#c16f74,#9a5159);color:#fff;font-weight:900;box-shadow:0 4px #714149}
+.float{position:fixed;right:10px;bottom:calc(env(safe-area-inset-bottom) + 10px);z-index:8;width:38px;height:38px;border-radius:50%;border:1px solid #b78867;background:#fff0d8d8}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);padding:8px 13px;border-radius:18px;background:#42312de9;color:#fff3df;font-size:10px;opacity:0;transition:.2s;z-index:60}.toast.show{opacity:1;bottom:34px}
+@media(max-width:380px){.board{gap:3px}.tile{border-radius:8px}.brand b{font-size:18px}}
+</style></head>
+<body>
+<div class="app"><div class="bg"><div class="moon"></div><div class="m1"></div><div class="m2"></div><div class="petals"></div></div>
+<header class="top"><div class="brand"><div class="seal">月</div><div><b>花月小鎮</b><small>唯美古風・消除物語</small></div></div><div class="res"><span class="pill">🪙 <b id="coins">500</b></span><span class="pill">♥ <b id="life">5</b></span></div></header>
+<section id="home" class="screen">
+<div class="hero"><div class="tree t1">🌸</div><div class="tree t2">🌳</div><div class="roof"></div><div class="house"><div class="door"></div><div class="window w1"></div><div class="window w2"></div><div class="lantern l1">🏮</div><div class="lantern l2">🏮</div></div><div class="story"><b>第一章・重返花月鎮</b><br>多年後，你收到故鄉來信。荒廢的老宅、斷裂的石橋與熄滅的燈街，都在等你回來。</div></div>
+<div class="panel"><div class="head"><b>小鎮修復</b><span><b id="stars">0</b> ★</span></div><div class="progress"><i id="townprog"></i></div><div class="tasks"><div class="task">🏠<br>修復老宅</div><div class="task">🌉<br>重建石橋</div><div class="task">🏮<br>點亮燈街</div></div><button class="big" onclick="enterLevel()">開始第 <span id="homeLv">1</span> 關</button></div>
+<div class="navs"><button class="nav" onclick="repairTown()">🏡 修復</button><button class="nav" onclick="toast('圖鑑將在正式版開放')">📜 圖鑑</button><button class="nav" onclick="toast('活動中心將在正式版開放')">🎐 活動</button><button class="nav" onclick="toggleAudio()">♫ 音樂</button></div>
+</section>
+<section id="level" class="screen level hidden">
+<div class="levelhead"><button class="back" onclick="goHome()">‹</button><div class="lname" id="lname"></div><div class="moves" id="moves"></div></div>
+<div class="goals"><div class="goal">花瓣 <b id="g0"></b></div><div class="goal">月果 <b id="g1"></b></div><div class="goal">目標 <b id="target"></b></div></div>
+<div class="boardframe"><div id="board" class="board"></div></div>
+<div class="scorearea"><div class="meter"><i id="fill"></i></div><div class="scoreline"><span id="score">0分</span><span id="starline">☆ ☆ ☆</span></div></div>
+<div class="tools"><button class="tool" onclick="hint()">尋路簽</button><button class="tool" onclick="shuffleBoard()">洗牌 20</button><button class="tool hot" onclick="hammer()">錦繡錘 40</button></div>
+</section>
+<button class="float" onclick="toggleAudio()">♫</button>
+</div>
+<div id="combo" class="combo"></div>
+<div id="modal" class="modal"><div class="card"><h2 id="mt"></h2><div id="mi" class="reward"></div><p id="mp"></p><button onclick="closeModal()">繼續</button></div></div>
+<div id="toast" class="toast"></div>
+
+<script>
+const N=8,T=6;
+const LEVELS=Array.from({length:12},(_,i)=>({name:`第 ${i+1} 關・${["桃枝初醒","月橋微雨","燈火人間","舊宅新生"][i%4]}`,moves:27-Math.min(5,Math.floor(i/3)),goals:[12+i*2,8+i],score:1800+i*260,reward:120+i*15}));
+let grid=[],sel=null,locked=false,score=0,got=[0,0],coins=500,life=5,stars=0,lv=0,moves=26,lastWin=false,audioOn=true;
+const $=x=>document.getElementById(x);let ac=null;
+function sfx(id){
+ if(!audioOn)return;
+ try{
+  ac=ac||new(window.AudioContext||window.webkitAudioContext)();
+  const map={tap:[740],match:[660,880],comboS:[523,659,784],winS:[523,659,784,1047],specialS:[330,660,990]};
+  const ns=map[id]||[660];
+  ns.forEach((f,j)=>{
+   let o=ac.createOscillator(),g=ac.createGain(),now=ac.currentTime+j*.04;
+   o.frequency.value=f;o.type='sine';
+   g.gain.setValueAtTime(.05,now);g.gain.exponentialRampToValueAtTime(.001,now+.24);
+   o.connect(g).connect(ac.destination);o.start(now);o.stop(now+.25);
+  });
+ }catch(e){}
+}function save(){localStorage.setItem("hy_demo",JSON.stringify({coins,life,stars,lv,audioOn}))}function load(){try{let s=JSON.parse(localStorage.getItem("hy_demo"));if(s){coins=s.coins??coins;life=s.life??life;stars=s.stars??stars;lv=s.lv??0;audioOn=s.audioOn??true}}catch(e){}}
+function mk(type){return{type,special:null}}function rnd(){return Math.floor(Math.random()*T)}function rc(i){return[Math.floor(i/N),i%N]}function ix(r,c){return r*N+c}function adj(a,b){let[x,y]=rc(a),[u,v]=rc(b);return Math.abs(x-u)+Math.abs(y-v)===1}
+function matchAt(i){let x=grid[i]?.type,[r,c]=rc(i);return(c>=2&&grid[i-1]?.type===x&&grid[i-2]?.type===x)||(r>=2&&grid[i-N]?.type===x&&grid[i-2*N]?.type===x)}
+function gen(){grid=Array(64);for(let i=0;i<64;i++){do{grid[i]=mk(rnd())}while(matchAt(i))}if(!possible())return gen();render()}
+function render(drop=false){let b=$("board");b.innerHTML="";grid.forEach((o,i)=>{let d=document.createElement("div");d.className="tile"+(sel===i?" sel":"")+(drop?" drop":"")+(o.special?" "+o.special:"");let g=document.createElement("i");g.className="gem g"+o.type;d.appendChild(g);if(o.special){let s=document.createElement("span");s.className="spec";s.textContent=o.special==="rocket"?"➶":o.special==="bomb"?"✹":"✦";d.appendChild(s)}d.onclick=()=>tap(i);b.appendChild(d)});
+let L=LEVELS[lv];$("coins").textContent=coins;$("life").textContent=life;$("stars").textContent=stars;$("townprog").style.width=Math.min(100,stars/30*100)+"%";$("homeLv").textContent=lv+1;$("lname").textContent=L.name;$("moves").textContent=moves+"步";$("g0").textContent=got[0]+"/"+L.goals[0];$("g1").textContent=got[1]+"/"+L.goals[1];$("target").textContent=L.score;$("score").textContent=score+"分";let p=Math.min(100,score/L.score*100);$("fill").style.width=p+"%";$("starline").textContent=p>=100?"★ ★ ★":p>=70?"★ ★ ☆":p>=40?"★ ☆ ☆":"☆ ☆ ☆"}
+function enterLevel(){sfx("tap");$("home").classList.add("hidden");$("level").classList.remove("hidden");startLevel();}function goHome(){$("level").classList.add("hidden");$("home").classList.remove("hidden");render()}function startLevel(){score=0;got=[0,0];moves=LEVELS[lv].moves;sel=null;gen()}
+function tap(i){if(locked)return;sfx("tap");if(sel===null){sel=i;render();return}if(sel===i){sel=null;render();return}if(!adj(sel,i)){sel=i;render();return}let a=sel;sel=null;[grid[a],grid[i]]=[grid[i],grid[a]];let m=findMatches();if(!m.cells.size){[grid[a],grid[i]]=[grid[i],grid[a]];render();toast("這一步沒有形成消除");return}moves--;resolve(m,1,[a,i])}
+function findMatches(){let cells=new Set(),runs=[];for(let r=0;r<N;r++){let c=0;while(c<N){let x=grid[ix(r,c)]?.type,j=c;while(j+1<N&&grid[ix(r,j+1)]?.type===x)j++;if(x!=null&&j-c+1>=3){let a=[];for(let k=c;k<=j;k++){cells.add(ix(r,k));a.push(ix(r,k))}runs.push({d:"h",a})}c=j+1}}for(let c=0;c<N;c++){let r=0;while(r<N){let x=grid[ix(r,c)]?.type,j=r;while(j+1<N&&grid[ix(j+1,c)]?.type===x)j++;if(x!=null&&j-r+1>=3){let a=[];for(let k=r;k<=j;k++){cells.add(ix(k,c));a.push(ix(k,c))}runs.push({d:"v",a})}r=j+1}}return{cells,runs}}
+function trigger(i,set){let o=grid[i];if(!o?.special)return;let[r,c]=rc(i);sfx("specialS");if(navigator.vibrate)navigator.vibrate(25);if(o.special==="rocket")for(let x=0;x<N;x++)set.add(ix(r,x));if(o.special==="bomb")for(let rr=r-1;rr<=r+1;rr++)for(let cc=c-1;cc<=c+1;cc++)if(rr>=0&&rr<N&&cc>=0&&cc<N)set.add(ix(rr,cc));if(o.special==="lotus"){let q=rnd();for(let k=0;k<64;k++)if(grid[k]?.type===q)set.add(k)}}
+function resolve(m,combo,sw=[]){if(!m.cells.size){locked=false;render(true);checkEnd();return}locked=true;let set=new Set(m.cells);[...set].forEach(i=>trigger(i,set));let at=null,sp=null;for(let r of m.runs)if(r.a.length>=5){at=sw.find(x=>r.a.includes(x))??r.a[2];sp="lotus";break}if(!sp){let c=[...m.cells].find(i=>m.runs.filter(r=>r.a.includes(i)).length>=2);if(c!=null){at=c;sp="bomb"}}if(!sp){let r=m.runs.find(r=>r.a.length===4);if(r){at=sw.find(x=>r.a.includes(x))??r.a[1];sp="rocket"}}if(at!=null)set.delete(at);let es=document.querySelectorAll(".tile");set.forEach(i=>es[i]?.classList.add("pop"));[...set].forEach(i=>{let x=grid[i]?.type;if(x===0)got[0]++;if(x===1)got[1]++;score+=20*combo;coins+=1});sfx(combo>1?"comboS":"match");if(combo>1)showCombo(combo);setTimeout(()=>{set.forEach(i=>grid[i]=null);if(at!=null&&grid[at])grid[at]={type:grid[at].type,special:sp};collapse();fill();render(true);setTimeout(()=>{let n=findMatches();if(n.cells.size)resolve(n,combo+1,[]);else{locked=false;checkEnd()}},220)},300)}
+function collapse(){for(let c=0;c<N;c++){let a=[];for(let r=N-1;r>=0;r--)if(grid[ix(r,c)])a.push(grid[ix(r,c)]);for(let r=N-1;r>=0;r--)grid[ix(r,c)]=a[N-1-r]??null}}function fill(){for(let i=0;i<64;i++)if(!grid[i])grid[i]=mk(rnd())}
+function possible(){for(let a=0;a<64;a++)for(let b of[a+1,a+N])if(b<64&&adj(a,b)){[grid[a],grid[b]]=[grid[b],grid[a]];let ok=findMatches().cells.size;[grid[a],grid[b]]=[grid[b],grid[a]];if(ok)return true}return false}
+function checkEnd(){let L=LEVELS[lv],ok=got[0]>=L.goals[0]&&got[1]>=L.goals[1]&&score>=L.score;if(ok){lastWin=true;stars+=3;coins+=L.reward;sfx("winS");showModal("三星通關","🏮",`獲得 3 顆修復星與 ${L.reward} 銅錢。花月鎮又亮起一盞燈。`)}else if(moves<=0){lastWin=false;life=Math.max(0,life-1);showModal("差一點","🥀","步數用完了，再試一次。")}else if(!possible())shuffleBoard(true);save();render()}
+function showModal(t,i,p){$("mt").textContent=t;$("mi").textContent=i;$("mp").textContent=p;$("modal").style.display="flex"}function closeModal(){$("modal").style.display="none";if(lastWin){lv=Math.min(LEVELS.length-1,lv+1);save();goHome()}else startLevel()}
+function shuffleBoard(free=false){if(locked)return;if(!free){if(coins<20)return toast("銅錢不足");coins-=20}grid.sort(()=>Math.random()-.5);if(findMatches().cells.size||!possible())return shuffleBoard(true);render();save()}
+function hammer(){if(locked)return;if(coins<40)return toast("銅錢不足");coins-=40;let i=Math.floor(Math.random()*64);grid[i]=mk(rnd());render();save();sfx("specialS")}
+function hint(){for(let a=0;a<64;a++)for(let b of[a+1,a+N])if(b<64&&adj(a,b)){[grid[a],grid[b]]=[grid[b],grid[a]];let ok=findMatches().cells.size;[grid[a],grid[b]]=[grid[b],grid[a]];if(ok){sel=a;render();setTimeout(()=>{sel=null;render()},900);return}}}
+function repairTown(){if(stars<3)return toast("需要 3 顆修復星");stars-=3;save();render();showModal("修復完成","🌉","石橋已重新鋪好。溪水倒映著燈火，小鎮恢復了一點從前的模樣。")}
+function showCombo(n){let c=$("combo");c.textContent=n>=4?"錦繡連華 ×"+n:"連擊 ×"+n;c.classList.remove("show");void c.offsetWidth;c.classList.add("show")}
+function toggleAudio(){audioOn=!audioOn;;else $("bgm").pause();save();toast(audioOn?"音樂已開啟":"音樂已關閉")}
+function toast(s){let t=$("toast");t.textContent=s;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1300)}
+load();gen();render();
+</script></body></html>
